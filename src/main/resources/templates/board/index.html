@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>JPA</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/init.css">
+    <script src="/js/park.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <th:block th:replace=" header :: top "></th:block>
+    <div id="main">
+        <h1> 커뮤니티 </h1>
+        <div id="writeBt">
+            <a href="/community/write">글 작성</a>
+        </div>
+        <div id="listBox">
+            <table id="listTable">
+                <tr>
+                    <th class="num"> 번호 </th>
+                    <th class="title"> 제목 </th>
+                </tr>
+                <tr th:each="row : ${boardListDto}">
+                    <td class="num" th:text="${row.id}"></td>
+                    <td class="title">
+                        <a th:href="'/community/detail?id='+${row.board}" th:text="${row.title}"></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

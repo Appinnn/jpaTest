@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>JPA</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/init.css">
+    <script src="/js/park.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <th:block th:replace=" header :: top "></th:block>
+    <div id="main">
+        <h1> 상세 페이지 </h1>
+
+        <div id="detailBox" th:object="${boardDto}">
+            <div> 작성자  : <span th:text="*{writer}"></span> </div>
+            <div> 제목 : <span th:text="*{title}"></span> </div>
+            <div> 내용 : <p th:text="*{content}"></p> </div>
+        </div>
+        <div>
+            <a th:href="'/community/update?id=' + *{boardId}"> 수정 </a>
+            <a th:href="'/community/delete?id=' + *{boardId}"> 삭제 </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

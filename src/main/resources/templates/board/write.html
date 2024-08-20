@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>JPA</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/init.css">
+    <script src="/js/park.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <th:block th:replace=" header :: top "></th:block>
+    <div id="main">
+        <h1> 커뮤니티 글 작성 </h1>
+
+        <form method="get" action="/community/writeSave" th:object="${boardDto}">
+            <div id="formData">
+                작성자 : <input type="text" th:field="*{writer}"> <br>
+                제목 : <input type="text" th:field="*{title}"> <br>
+                내용 : <textarea th:field="*{content}"></textarea>
+            </div>
+            <button> 작성하기 </button>
+        </form>
+
+
+
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
