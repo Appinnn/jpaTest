@@ -24,7 +24,7 @@
                 <tr th:each="row : ${boardListDto}">
                     <td class="num" th:text="${row.id}"></td>
                     <td class="title">
-                        <a th:href="'/community/detail?id='+${row.board}" th:text="${row.title}"></a>
+                        <a th:href="'/community/detail?id='+${row.id}" th:text="${row.title}"></a>
                     </td>
                 </tr>
             </table>

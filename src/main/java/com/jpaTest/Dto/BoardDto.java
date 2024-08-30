@@ -30,6 +30,12 @@ public class BoardDto
     {
         return modelMapper.map(this, Board.class);
     }
+    // Board(Entity) -> BoardDto(DTO) 에 저장
+    public static BoardDto of(Board board)
+    {
+        return modelMapper.map(board, BoardDto.class);
+    }
+
 
     // BoardDto -> Board
 //    public Board createBoard()

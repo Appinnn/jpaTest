@@ -17,11 +17,12 @@
             <div> 작성자  : <span th:text="*{writer}"></span> </div>
             <div> 제목 : <span th:text="*{title}"></span> </div>
             <div> 내용 : <p th:text="*{content}"></p> </div>
+            <div>
+                <a th:href="'/community/update?id=' + *{id}"> 수정 </a>
+                <a th:href="'/community/delete?id=' + *{id}"> 삭제 </a>
+            </div>
         </div>
-        <div>
-            <a th:href="'/community/update?id=' + *{boardId}"> 수정 </a>
-            <a th:href="'/community/delete?id=' + *{boardId}"> 삭제 </a>
-        </div>
+
     </div>
 </div>
 </body>
